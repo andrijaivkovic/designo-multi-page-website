@@ -1,0 +1,36 @@
+---
+
+---
+
+<section class="portfolio-projects">
+  <slot />
+</section>
+
+<style>
+  .portfolio-projects {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4rem;
+
+    margin: 0rem 2.4rem;
+
+    @media screen and (min-width: 45em) {
+      margin: 0rem 4rem;
+    }
+
+    @media screen and (min-width: 85.375em) {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr 1fr;
+
+      gap: 3rem;
+
+      margin: 0rem 16rem;
+    }
+
+    @media screen and (min-width: 120em) {
+      margin-inline: 20vw;
+    }
+  }
+</style>

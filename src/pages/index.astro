@@ -1,16 +1,53 @@
 ---
+import Body from "../layout/Body.astro";
+import Main from "../layout/Main.astro";
+import Footer from "../layout/Footer.astro";
+import PageContainer from "../layout/PageContainer.astro";
 
+import Navigation from "../layout/Navigation.astro";
+import HomeHero from "../components/HomeHero.astro";
+import PortfolioLinks from "../components/PortfolioLinks.astro";
+import Qualities from "../components/Qualities.astro";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon/favicon-16x16.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+    <title>Home | Designo Design Agency</title>
+  </head>
+  <Body>
+    <Navigation />
+    <PageContainer>
+      <HomeHero />
+      <Main>
+        <PortfolioLinks
+          includedTypes={["web-design", "app-design", "graphic-design"]}
+        />
+        <Qualities />
+        <Footer />
+      </Main>
+    </PageContainer>
+  </Body>
 </html>

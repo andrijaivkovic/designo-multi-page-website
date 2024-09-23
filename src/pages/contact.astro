@@ -1,0 +1,48 @@
+---
+import LocationsLinks from "../components/LocationsLinks.astro";
+import ContactHero from "../components/ContactHero.astro";
+
+import Body from "../layout/Body.astro";
+import Footer from "../layout/Footer.astro";
+import Main from "../layout/Main.astro";
+import Navigation from "../layout/Navigation.astro";
+import PageContainer from "../layout/PageContainer.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Get in touch | Designo Design Agency</title>
+  </head>
+  <body>
+    <Body>
+      <Navigation />
+      <PageContainer>
+        <Main>
+          <ContactHero />
+          <LocationsLinks />
+          <Footer showCta={false} />
+        </Main>
+      </PageContainer>
+    </Body>
+  </body>
+</html>

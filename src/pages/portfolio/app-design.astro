@@ -1,0 +1,83 @@
+---
+import Body from "../../layout/Body.astro";
+import Main from "../../layout/Main.astro";
+import Navigation from "../../layout/Navigation.astro";
+import Footer from "../../layout/Footer.astro";
+
+import PortfolioHero from "../../components/PortfolioHero.astro";
+import PortfolioProjects from "../../components/PortfolioProjects.astro";
+import PortfolioProject from "../../components/PortfolioProject.astro";
+import PortfolioLinks from "../../components/PortfolioLinks.astro";
+import PageContainer from "../../layout/PageContainer.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Services - App Design | Designo Design Agency</title>
+  </head>
+  <Body>
+    <Navigation />
+    <PageContainer>
+      <PortfolioHero
+        heading="App design"
+        bodyText="Our mobile designs bring intuitive digital solutions to your customers right at their fingertips."
+      />
+      <Main>
+        <PortfolioProjects>
+          <PortfolioProject
+            projectTitle="Airfilter"
+            projectDesc="Solving the problem of poor indoor air quality by filtering the air"
+            projectImagePath="/images/portfolio/app-design/image-airfilter.jpg"
+            projectImageAlt="123"
+          />
+          <PortfolioProject
+            projectTitle="Eyecam"
+            projectDesc="Product that lets you edit your favorite photos and videos at any time"
+            projectImagePath="/images/portfolio/app-design/image-eyecam.jpg"
+            projectImageAlt="123"
+          />
+          <PortfolioProject
+            projectTitle="Faceit"
+            projectDesc="Get to meet your favorite internet superstar with the faceit app"
+            projectImagePath="/images/portfolio/app-design/image-faceit.jpg"
+            projectImageAlt="123"
+          />
+          <PortfolioProject
+            projectTitle="Todo"
+            projectDesc="A todo app that features cloud sync with light and dark mode"
+            projectImagePath="/images/portfolio/app-design/image-todo.jpg"
+            projectImageAlt="123"
+          />
+          <PortfolioProject
+            projectTitle="Loopstudios"
+            projectDesc="A VR experience app made for Loopstudios"
+            projectImagePath="/images/portfolio/app-design/image-loopstudios.jpg"
+            projectImageAlt="123"
+          />
+        </PortfolioProjects>
+        <PortfolioLinks includedTypes={["web-design", "graphic-design"]} />
+      </Main>
+      <Footer /></PageContainer
+    >
+  </Body>
+</html>

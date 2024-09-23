@@ -1,0 +1,242 @@
+---
+
+---
+
+<nav id="nav" class="navigation-container">
+  <div class="navigation-bar">
+    <a title="Go to the home page" class="navigation__logo" href="/">
+      <img src="/logos/logo-dark.png" alt="Designio agency logo" />
+    </a>
+    <div id="nav-toggle" class="navigation__menu-toggle">
+      <label for="nav-toggle-checkbox">Open the menu</label>
+      <input id="nav-toggle-checkbox" autocomplete="off" type="checkbox" />
+    </div>
+    <ul class="navigation__menu">
+      <li>
+        <a class="navigation__link" title="Learn more about us" href="/about"
+          >Our company</a
+        >
+      </li>
+      <li>
+        <a
+          class="navigation__link"
+          title="See the locations of our offices"
+          href="/locations">Locations</a
+        >
+      </li>
+      <li>
+        <a class="navigation__link" title="Get in touch" href="/contact"
+          >Contact</a
+        >
+      </li>
+    </ul>
+  </div>
+
+  <ul id="mobile-menu" class="navigation__mobile-menu">
+    <li>
+      <a class="navigation__link" title="Learn more about us" href="/about"
+        >Our company</a
+      >
+    </li>
+    <li>
+      <a
+        class="navigation__link"
+        title="See the locations of our offices"
+        href="/locations">Locations</a
+      >
+    </li>
+    <li>
+      <a class="navigation__link" title="Get in touch" href="/contact"
+        >Contact</a
+      >
+    </li>
+  </ul>
+  <div id="mobile-menu-shade" class="navigation__mobile-menu-shade"></div>
+</nav>
+
+<style>
+  .navigation-container {
+    position: static;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 999;
+  }
+
+  .navigation-bar {
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 3.2rem 2.4rem;
+
+    background-color: var(--color-white);
+
+    border-bottom: 1px solid #e5e5e5;
+
+    z-index: 999;
+
+    @media screen and (min-width: 48em) {
+      padding: 6.4rem 4rem;
+      border: none;
+    }
+
+    @media screen and (min-width: 85.375em) {
+      padding: 6.4rem 11vw;
+    }
+
+    @media screen and (min-width: 120em) {
+      padding: 8rem 20vw;
+    }
+  }
+
+  .navigation__logo {
+    max-width: 20rem;
+  }
+
+  .navigation__menu-toggle {
+    position: relative;
+
+    @media screen and (min-width: 48em) {
+      display: none;
+    }
+
+    & > label {
+      visibility: hidden;
+      position: absolute;
+    }
+
+    & > input {
+      display: flex;
+      height: 2rem;
+      width: 2.4rem;
+
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+
+      background-image: url("/icons/icon-hamburger.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+
+      &:checked {
+        background-image: url("/icons/icon-close.svg");
+      }
+    }
+  }
+
+  .navigation__mobile-menu {
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+    width: 100%;
+
+    display: none;
+    flex-direction: column;
+
+    gap: 3.2rem;
+
+    padding: 4.8rem 2.4rem;
+
+    list-style: none;
+
+    background-color: var(--color-black);
+
+    z-index: 998;
+
+    @media screen and (min-width: 48em) {
+      display: none;
+    }
+  }
+
+  .navigation__link {
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    transition: 0.15s;
+
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      border-bottom: 1px solid var(--color-black);
+    }
+
+    @media screen and (min-width: 48em) {
+      color: var(--color-black);
+      font-size: 1.4rem;
+    }
+  }
+
+  .navigation__mobile-menu-shade {
+    position: fixed;
+
+    display: none;
+
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+
+    background-color: var(--color-black);
+    opacity: 0.8;
+
+    z-index: 990;
+  }
+
+  .navigation__menu {
+    display: none;
+
+    list-style: none;
+
+    @media screen and (min-width: 48em) {
+      display: flex;
+      gap: 4.2rem;
+    }
+  }
+</style>
+
+<script>
+  const navToggle = document.querySelector(
+    "#nav-toggle-checkbox"
+  ) as HTMLInputElement;
+
+  const mobileMenu = document.querySelector("#mobile-menu") as HTMLElement;
+
+  const mobileMenuShade = document.querySelector(
+    "#mobile-menu-shade"
+  ) as HTMLElement;
+
+  const handleNavToggle = (e?: Event, element?: HTMLInputElement) => {
+    const eventTarget =
+      (e?.target as HTMLInputElement) || (element as HTMLInputElement);
+
+    if (eventTarget.checked) {
+      mobileMenu.style.display = "flex";
+      mobileMenuShade.style.display = "flex";
+    }
+
+    if (!eventTarget.checked) {
+      mobileMenu.style.display = "none";
+      mobileMenuShade.style.display = "none";
+    }
+  };
+
+  navToggle.addEventListener("change", (e) => handleNavToggle(e, null));
+
+  mobileMenuShade.addEventListener("click", () => {
+    navToggle.checked = false;
+    handleNavToggle(null, navToggle);
+  });
+</script>

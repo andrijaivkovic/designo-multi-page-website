@@ -1,0 +1,84 @@
+---
+interface Props {
+  title?: string;
+  to?: string;
+  variation?: "normal" | "inverted";
+  children: any;
+  isLink?: boolean;
+  type?: "button" | "submit" | "reset";
+}
+
+const {
+  to,
+  title,
+  type = "button",
+  variation = "normal",
+  isLink = false,
+} = Astro.props;
+---
+
+{
+  isLink && (
+    <a title={title} class:list={["button", variation]} href={to}>
+      <slot />
+    </a>
+  )
+}
+
+{
+  !isLink && (
+    <button type={type} class:list={["button", variation]}>
+      <slot />
+    </button>
+  )
+}
+
+<style>
+  .button {
+    position: relative;
+
+    padding: 1.4rem 3.2rem;
+    border-radius: 0.8rem;
+
+    text-transform: uppercase;
+
+    text-decoration: none;
+    font-weight: 500;
+
+    transition: 0.15s;
+
+    &:hover {
+      scale: 1.05;
+    }
+
+    &:active {
+      scale: 0.95;
+    }
+  }
+
+  .button.normal {
+    color: var(--color-black);
+
+    background-color: var(--color-white);
+
+    &:hover,
+    &:active {
+      color: var(--color-white);
+
+      background-color: var(--color-light-peach);
+    }
+  }
+
+  .button.inverted {
+    color: var(--color-white);
+
+    background-color: var(--color-peach);
+
+    &:hover,
+    &:active {
+      color: var(--color-white);
+
+      background-color: var(--color-light-peach);
+    }
+  }
+</style>

@@ -1,0 +1,20 @@
+---
+
+---
+
+<main class="main">
+  <slot />
+</main>
+
+<style>
+  .main {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12rem;
+
+    @media screen and (min-width: 85.375em) {
+      gap: 16rem;
+    }
+  }
+</style>

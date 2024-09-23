@@ -1,0 +1,114 @@
+---
+import ContactHeroForm from "./ContactHeroForm/ContactHeroForm";
+---
+
+<section class="contact__hero">
+  <article class="contact__hero-text">
+    <h1>Contact Us</h1>
+    <p>
+      Ready to take it to the next level? Let’s talk about your project or idea
+      and find out how we can help your business grow. If you are looking for
+      unique digital experiences that’s relatable to your users, drop us a line.
+    </p>
+  </article>
+  <ContactHeroForm client:load />
+
+  <style>
+    .contact__hero {
+      position: relative;
+
+      display: flex;
+      flex-direction: column;
+
+      align-items: center;
+
+      gap: 4.8rem;
+
+      padding: 7.2rem 2.4rem;
+
+      background-color: var(--color-peach);
+
+      z-index: 9;
+
+      @media screen and (min-width: 48em) {
+        padding: 7rem 6rem;
+        margin: 0 4rem;
+
+        border-radius: 1.5rem;
+        overflow: hidden;
+      }
+
+      @media screen and (min-width: 85.375em) {
+        flex-direction: row;
+
+        justify-content: space-between;
+
+        margin: 0 11vw;
+      }
+
+      @media screen and (min-width: 120em) {
+        margin: 0 20vw;
+      }
+
+      &::before {
+        position: absolute;
+        content: "";
+
+        top: 0;
+        left: 0;
+
+        height: 100%;
+        width: 100%;
+
+        background-image: url("/images/bg/bg-pattern-hero-contact-mobile.svg");
+        background-repeat: no-repeat;
+        background-size: 250%;
+        background-position: 20% top;
+
+        z-index: -1;
+      }
+    }
+
+    @media screen and (min-width: 48em) {
+      .contact__hero::before {
+        background-image: url("/images/bg/bg-pattern-hero-about.svg");
+        background-size: unset;
+        background-position: -225% -25%;
+      }
+    }
+
+    @media screen and (min-width: 85.375em) {
+      .contact__hero::before {
+        background-image: url("/images/bg/bg-pattern-hero-about.svg");
+        background-size: 55%;
+        background-position: left bottom;
+      }
+    }
+
+    .contact__hero-text {
+      display: flex;
+      flex-direction: column;
+
+      align-items: center;
+
+      text-align: center;
+      color: var(--color-white);
+
+      gap: 2.4rem;
+
+      @media screen and (min-width: 48em) {
+        text-align: start;
+      }
+
+      @media screen and (min-width: 85.375em) {
+        max-width: 45rem;
+      }
+
+      & > h1 {
+        @media screen and (min-width: 48em) {
+          align-self: start;
+        }
+      }
+    }
+  </style>
+</section>

@@ -1,0 +1,33 @@
+html {
+  font-family: "Jost Variable", sans-serif;
+  font-size: 62.5%;
+
+  overflow-x: hidden;
+
+  @media screen and (min-width: 120em) {
+    font-size: 72%;
+  }
+}
+
+button,
+a,
+input[type="checkbox"],
+label {
+  cursor: pointer;
+}
+
+*,
+*::after,
+*::before {
+  outline-offset: 0.5rem;
+}
+
+/* ::-moz-selection {
+  color: var(--color-cream);
+  background: var(--color-green);
+}
+
+::selection {
+  color: var(--color-cream);
+  background: var(--color-green);
+} */

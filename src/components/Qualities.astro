@@ -1,0 +1,157 @@
+---
+
+---
+
+<section class="qualities">
+  <article class="quality quality--passionate">
+    <div class="quality__image">
+      <img
+        src="/images/qualities/qualities-passionate.svg"
+        alt="Passionate quality illustration"
+      />
+    </div>
+    <div class="quality__text">
+      <h3>Passionate</h3>
+      <p>
+        Each project starts with an in-depth brand research to ensure we only
+        create products that serve a purpose. We merge art, design, and
+        technology into exciting new solutions.
+      </p>
+    </div>
+  </article>
+  <article class="quality quality--resourceful">
+    <div class="quality__image">
+      <img
+        class="quality__image"
+        src="/images/qualities/qualities-resourceful.svg"
+        alt="Resourceful quality illustration"
+      />
+    </div>
+    <div class="quality__text">
+      <h3>Resourceful</h3>
+      <p>
+        Everything that we do has a strategic purpose. We use an agile approach
+        in all of our projects and value customer collaboration. It guarantees
+        superior results that fulfill our clients’ needs.
+      </p>
+    </div>
+  </article>
+  <article class="quality quality--friendly">
+    <div class="quality__image">
+      <img
+        src="/images/qualities/qualities-friendly.svg"
+        alt="Friendly quality illustration"
+      />
+    </div>
+
+    <div class="quality__text">
+      <h3>Friendly</h3>
+      <p>
+        We are a group of enthusiastic folks who know how to put people first.
+        Our success depends on our customers, and we strive to give them the
+        best experience a company can provide.
+      </p>
+    </div>
+  </article>
+</section>
+
+<style>
+  .qualities {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8rem;
+
+    margin: 0 2.4rem;
+
+    @media screen and (min-width: 48em) {
+      margin: 0 4rem;
+    }
+
+    @media screen and (min-width: 85.375em) {
+      flex-direction: row;
+      margin: 0 20rem;
+      gap: 4rem;
+    }
+
+    @media screen and (min-width: 85.375em) {
+      margin: 0 22vw;
+    }
+  }
+
+  .quality {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 4.8rem;
+
+    @media screen and (min-width: 48em) {
+      flex-direction: row;
+    }
+
+    @media screen and (min-width: 85.375em) {
+      flex-direction: column;
+    }
+  }
+
+  .quality--resourceful {
+    & .quality__image::before {
+      rotate: -45deg;
+    }
+  }
+
+  .quality--friendly {
+    & .quality__image::before {
+      rotate: 45deg;
+    }
+  }
+
+  .quality__image {
+    width: 20rem;
+    position: relative;
+
+    @media screen and (min-width: 48em) {
+      min-width: 20rem;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+
+      top: 0;
+      left: 0;
+
+      height: 100%;
+      width: 100%;
+
+      background-image: url("/images/bg/bg-pattern-small-circle.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      z-index: -1;
+    }
+  }
+
+  .quality__text {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1.6rem;
+
+    text-align: center;
+
+    @media screen and (min-width: 48em) {
+      text-align: left;
+    }
+
+    @media screen and (min-width: 85.375em) {
+      text-align: center;
+    }
+  }
+</style>

@@ -1,0 +1,106 @@
+---
+interface Props {
+  projectTitle: string;
+  projectDesc: string;
+  projectImagePath: string;
+  projectImageAlt: string;
+}
+
+const { projectTitle, projectDesc, projectImagePath, projectImageAlt } =
+  Astro.props;
+---
+
+<a href="#" class="portfolio__project">
+  <div class="project__image">
+    <img src={projectImagePath} alt={projectImageAlt} />
+  </div>
+  <div class="project__text">
+    <h3>{projectTitle}</h3>
+    <p>{projectDesc}</p>
+  </div>
+</a>
+
+<style>
+  .portfolio__project {
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 1.5rem;
+
+    overflow: hidden;
+
+    text-decoration: none;
+
+    @media screen and (min-width: 48em) {
+      display: grid;
+      grid-template-columns: 0.95fr 1fr;
+    }
+
+    @media screen and (min-width: 85.375em) {
+      display: flex;
+    }
+  }
+
+  .portfolio__project:hover .project__image > img {
+    scale: 1.025;
+  }
+
+  .portfolio__project:hover .project__text {
+    background-color: var(--color-peach);
+
+    & > h3 {
+      color: var(--color-white);
+    }
+
+    & > p {
+      color: var(--color-white);
+    }
+  }
+
+  .project__text {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1rem;
+
+    padding: 3.2rem 4.8rem;
+
+    color: var(--color-white);
+    text-align: center;
+
+    background-color: var(--color-cream);
+
+    transition: 0.25s;
+
+    flex: 1;
+
+    @media screen and (min-width: 48em) {
+      justify-content: center;
+    }
+
+    & > h3 {
+      color: var(--color-peach);
+    }
+
+    & > p {
+      color: var(--color-black);
+    }
+  }
+
+  .project__image {
+    display: inline-block;
+
+    overflow: hidden;
+
+    & > img {
+      display: inline-block;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      transition: 0.25s ease-in-out;
+    }
+  }
+</style>

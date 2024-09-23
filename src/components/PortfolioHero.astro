@@ -1,0 +1,95 @@
+---
+const { heading, bodyText } = Astro.props;
+---
+
+<section class="portfolio-hero">
+  <div class="portfolio-hero__text">
+    <h1>{heading}</h1>
+    <p>
+      {bodyText}
+    </p>
+  </div>
+</section>
+
+<style>
+  .portfolio-hero {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    padding: 10rem 2.4rem;
+
+    color: var(--color-white);
+    text-align: center;
+
+    /* width: 100%; */
+
+    background-color: var(--color-peach);
+
+    overflow: hidden;
+
+    @media screen and (min-width: 48em) {
+      padding: 6.4rem 2.4rem;
+      margin: 0 4rem;
+
+      border-radius: 1.5rem;
+    }
+
+    @media screen and (min-width: 85.375em) {
+      margin: 0 11vw;
+    }
+
+    @media screen and (min-width: 120em) {
+      margin: 0 20vw;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+
+      top: 0;
+      left: 0;
+
+      height: 100%;
+      width: 100%;
+
+      background-image: url("/images/bg/bg-pattern-portfolio-hero.svg");
+      background-repeat: no-repeat;
+      background-position: 95% 20%;
+      background-size: 250%;
+
+      z-index: 0;
+    }
+  }
+
+  @media screen and (min-width: 48em) {
+    .portfolio-hero::before {
+      background-size: cover;
+      background-position: 8rem center;
+    }
+  }
+
+  @media screen and (min-width: 85.375em) {
+    .portfolio-hero::before {
+      background-position: right center;
+    }
+  }
+
+  .portfolio-hero__text {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 2.4rem;
+
+    z-index: 9;
+
+    & > p {
+      max-width: 40ch;
+    }
+  }
+</style>

@@ -1,0 +1,281 @@
+---
+interface Props {
+  includedTypes: string[];
+}
+
+const { includedTypes } = Astro.props;
+---
+
+<section class="portfolio">
+  <a
+    title="See your web design projects"
+    href="/portfolio/web-design"
+    class:list={[
+      "portfolio__type",
+      `${includedTypes.includes("web-design") ? "" : "portfolio__type--hidden"}`,
+      `${includedTypes.length <= 2 ? "portfolio__type--small" : ""}`,
+      "portfolio__type--web-design",
+    ]}
+  >
+    <div class="type__content">
+      <p>Web design</p>
+      <span
+        ><p>View projects</p>
+        <svg
+          width="5"
+          height="10"
+          viewBox="0 0 5 10"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1 1.13477L5 5.13477L1 9.13477"
+            stroke="#E7816B"
+            stroke-width="2"></path>
+        </svg>
+      </span>
+    </div>
+  </a>
+  <a
+    title="See your app design projects"
+    href="/portfolio/app-design"
+    class:list={[
+      "portfolio__type",
+      `${includedTypes.includes("app-design") ? "" : "portfolio__type--hidden"}`,
+      " portfolio__type--app-design",
+    ]}
+  >
+    <div class="type__content">
+      <p>App design</p>
+      <span
+        ><p>View projects</p>
+        <svg
+          width="5"
+          height="10"
+          viewBox="0 0 5 10"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1 1.13477L5 5.13477L1 9.13477"
+            stroke="#E7816B"
+            stroke-width="2"></path>
+        </svg>
+      </span>
+    </div>
+  </a>
+  <a
+    title="See your graphic projects"
+    href="/portfolio/graphic-design"
+    class:list={[
+      "portfolio__type",
+      `${includedTypes.includes("graphic-design") ? "" : "portfolio__type--hidden"}`,
+      "portfolio__type--graphic-design",
+    ]}
+  >
+    <div class="type__content">
+      <p>Graphic design</p>
+      <span
+        ><p>View projects</p>
+        <svg
+          width="5"
+          height="10"
+          viewBox="0 0 5 10"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1 1.13477L5 5.13477L1 9.13477"
+            stroke="#E7816B"
+            stroke-width="2"></path>
+        </svg>
+      </span>
+    </div>
+  </a>
+</section>
+
+<style>
+  .portfolio {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2.4rem;
+
+    margin: 0 2.4rem;
+
+    @media screen and (min-width: 48em) {
+      margin: 0 4rem;
+    }
+
+    @media screen and (min-width: 85.375em) {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+      grid-row: 1fr 1fr;
+
+      gap: 3rem;
+
+      margin: 0 11vw;
+    }
+
+    @media screen and (min-width: 120em) {
+      margin: 0 20vw;
+    }
+  }
+
+  .portfolio__type {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 15rem 0;
+
+    border-radius: 1.5rem;
+    background-color: black;
+
+    text-align: center;
+    text-decoration: none;
+
+    overflow: hidden;
+
+    @media screen and (min-width: 48em) {
+      padding: 5rem 0;
+    }
+
+    @media screen and (min-width: 85.375em) {
+      padding: 10rem;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      height: 100%;
+      width: 100%;
+
+      background-color: var(--color-black);
+      opacity: 0.6;
+
+      transition: 0.25s;
+
+      z-index: 0;
+    }
+  }
+
+  .portfolio__type:hover {
+    &::before {
+      background-color: var(--color-peach);
+    }
+  }
+
+  .portfolio__type--web-design,
+  .portfolio__type--app-design,
+  .portfolio__type--graphic-design {
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .portfolio__type--web-design {
+    background-image: url("/images/image-web-design-mobile.jpg");
+
+    @media screen and (min-width: 48em) {
+      background-image: url("/images/image-web-design-tablet.jpg");
+    }
+  }
+
+  .portfolio__type--app-design {
+    background-image: url("/images/image-app-design-mobile.jpg");
+
+    @media screen and (min-width: 48em) {
+      background-image: url("/images/image-app-design-tablet.jpg");
+    }
+    @media screen and (min-width: 85.375em) {
+      background-image: url("/images/image-app-design-desktop.jpg");
+    }
+  }
+
+  .portfolio__type--graphic-design {
+    background-image: url("/images/image-graphic-design-mobile.jpg");
+
+    @media screen and (min-width: 48em) {
+      background-image: url("/images/image-graphic-design-tablet.jpg");
+    }
+    @media screen and (min-width: 85.375em) {
+      background-image: url("/images/image-graphic-design-desktop.jpg");
+    }
+  }
+
+  @media screen and (min-width: 85.375em) {
+    .portfolio__type--web-design {
+      grid-row: 1 / 3;
+      padding: 27rem 12rem;
+
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url("/images/image-web-design-desktop-large.jpg");
+    }
+
+    .portfolio__type--web-design.portfolio__type--small {
+      grid-row: 1 / 2;
+      padding: 9rem;
+
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url("/images/image-web-design-desktop-small.jpg");
+    }
+  }
+
+  .portfolio__type--hidden {
+    display: none;
+  }
+
+  .type__content {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 1.2rem;
+
+    z-index: 10;
+
+    & p {
+      font-size: 2.8rem;
+      color: var(--color-white);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+
+      line-height: 1.2;
+
+      @media screen and (min-width: 48em) {
+        font-size: 4rem;
+      }
+    }
+
+    & span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 1.6rem;
+
+      text-transform: uppercase;
+      text-decoration: none;
+
+      transition: 0.15s;
+
+      & p {
+        font-size: 1.5rem;
+        letter-spacing: 5px;
+        color: var(--color-white);
+      }
+    }
+  }
+</style>

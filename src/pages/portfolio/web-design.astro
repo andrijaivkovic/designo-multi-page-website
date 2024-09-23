@@ -1,0 +1,89 @@
+---
+import Body from "../../layout/Body.astro";
+import Main from "../../layout/Main.astro";
+import Navigation from "../../layout/Navigation.astro";
+import Footer from "../../layout/Footer.astro";
+import PageContainer from "../../layout/PageContainer.astro";
+
+import PortfolioHero from "../../components/PortfolioHero.astro";
+import PortfolioProjects from "../../components/PortfolioProjects.astro";
+import PortfolioProject from "../../components/PortfolioProject.astro";
+import PortfolioLinks from "../../components/PortfolioLinks.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Services - Web Design | Designo Design Agency</title>
+  </head>
+  <Body>
+    <Navigation />
+    <PageContainer>
+      <PortfolioHero
+        heading="Web design"
+        bodyText="We build websites that serve as powerful marketing tools and bring memorable brand experiences."
+      />
+      <Main>
+        <PortfolioProjects>
+          <PortfolioProject
+            projectTitle="Express"
+            projectDesc="A multi-carrier shipping website for ecommerce businesses"
+            projectImagePath="/images/portfolio/web-design/image-express.jpg"
+            projectImageAlt="123"
+          />
+          <PortfolioProject
+            projectTitle="Transfer"
+            projectDesc="Site for low-cost money transfers and sending money within seconds"
+            projectImagePath="/images/portfolio/web-design/image-transfer.jpg"
+            projectImageAlt="123"
+          />
+          <PortfolioProject
+            projectTitle="Photon"
+            projectDesc="A state-of-the-art music player with high-resolution audio and DSP effects"
+            projectImagePath="/images/portfolio/web-design/image-photon.jpg"
+            projectImageAlt="123"
+          />
+          <PortfolioProject
+            projectTitle="Builder"
+            projectDesc="Connects users with local contractors based on their location"
+            projectImagePath="/images/portfolio/web-design/image-builder.jpg"
+            projectImageAlt="123"
+          />
+          <PortfolioProject
+            projectTitle="Blogr"
+            projectDesc="Blogr is a platform for creating an online blog or publication"
+            projectImagePath="/images/portfolio/web-design/image-blogr.jpg"
+            projectImageAlt="123"
+          />
+          <PortfolioProject
+            projectTitle="Camp"
+            projectDesc="Get expert training in coding, data, design, and digital marketing"
+            projectImagePath="/images/portfolio/web-design/image-camp.jpg"
+            projectImageAlt="123"
+          />
+        </PortfolioProjects>
+        <PortfolioLinks includedTypes={["app-design", "graphic-design"]} />
+      </Main>
+      <Footer />
+    </PageContainer>
+  </Body>
+</html>

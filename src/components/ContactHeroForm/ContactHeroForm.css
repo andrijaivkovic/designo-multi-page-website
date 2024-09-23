@@ -1,0 +1,68 @@
+.contact__form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4.8rem;
+
+  width: 100%;
+
+  @media screen and (min-width: 85.375em) {
+    max-width: 45rem;
+  }
+}
+
+.contact__form-inputs {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2.4rem;
+
+  width: 100%;
+}
+
+.contact__form-actions {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+
+  gap: 2.4rem;
+
+  width: 100%;
+
+  @media screen and (min-width: 48em) {
+    justify-content: end;
+  }
+}
+
+.button {
+  position: relative;
+
+  padding: 1.4rem 3.2rem;
+  border-radius: 0.8rem;
+
+  text-transform: uppercase;
+
+  color: var(--color-black);
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: 0.15s;
+
+  background-color: var(--color-white);
+
+  &:hover,
+  &:active {
+    color: var(--color-white);
+
+    background-color: var(--color-light-peach);
+  }
+
+  &:hover {
+    scale: 1.05;
+  }
+
+  &:active {
+    scale: 0.95;
+  }
+}

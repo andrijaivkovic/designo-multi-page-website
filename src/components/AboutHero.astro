@@ -1,0 +1,133 @@
+---
+
+---
+
+<section class="about-hero">
+  <div class="about-hero__image">
+    <picture>
+      <source
+        srcset="/images/about/image-about-hero-mobile.jpg"
+        media="(max-width: calc(48em-1px))"
+      />
+      <source
+        srcset="/images/about/image-about-hero-tablet.jpg"
+        media="(min-width: 48em) and (max-width: calc(85.375em - 1px))"
+      />
+      <source
+        srcset="/images/about/image-about-hero-desktop.jpg"
+        media="(min-width: 85.375em)"
+      />
+      <img src="/images/about/image-about-hero-mobile.jpg" alt="" />
+    </picture>
+  </div>
+  <div class="about-hero__text">
+    <h1>About us</h1>
+    <p>
+      Founded in 2010, we are a creative agency that produces lasting results
+      for our clients. We’ve partnered with many startups, corporations, and
+      nonprofits alike to craft designs that make real impact. We’re always
+      looking forward to creating brands, products, and digital experiences that
+      connect with our clients’ audiences.
+    </p>
+  </div>
+</section>
+
+<style>
+  .about-hero {
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: 48em) {
+      margin: 0 4rem;
+
+      border-radius: 1.5rem;
+      overflow: hidden;
+    }
+
+    @media screen and (min-width: 85.375em) {
+      display: grid;
+      grid-template-columns: 1fr 0.7fr;
+
+      margin: 0 11vw;
+    }
+
+    @media screen and (min-width: 120em) {
+      margin: 0 20vw;
+    }
+  }
+
+  .about-hero__image {
+    height: 32rem;
+
+    & img {
+      object-fit: cover;
+    }
+
+    @media screen and (min-width: 85.375em) {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .about-hero__text {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 2.4rem;
+
+    padding: 8rem 2.4rem;
+
+    text-align: center;
+    color: var(--color-white);
+
+    background-color: var(--color-peach);
+
+    @media screen and (min-width: 48em) {
+      padding: 6.4rem;
+    }
+
+    @media screen and (min-width: 85.375em) {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+
+      justify-content: center;
+      align-items: start;
+
+      padding: 14rem 10rem;
+
+      text-align: start;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+
+      top: 0;
+      left: 0;
+
+      height: 100%;
+      width: 100%;
+
+      background-image: url("/images/bg/bg-pattern-hero-about.svg");
+      background-repeat: no-repeat;
+      background-size: 70%;
+      background-position: right -50%;
+
+      z-index: 0;
+    }
+  }
+
+  @media screen and (min-width: 85.375em) {
+    .about-hero__text::before {
+      background-size: 100%;
+      background-position: left bottom;
+    }
+  }
+</style>

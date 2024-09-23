@@ -1,0 +1,71 @@
+---
+import Body from "../../layout/Body.astro";
+import Main from "../../layout/Main.astro";
+import Navigation from "../../layout/Navigation.astro";
+import Footer from "../../layout/Footer.astro";
+
+import PortfolioHero from "../../components/PortfolioHero.astro";
+import PortfolioProjects from "../../components/PortfolioProjects.astro";
+import PortfolioProject from "../../components/PortfolioProject.astro";
+import PortfolioLinks from "../../components/PortfolioLinks.astro";
+import PageContainer from "../../layout/PageContainer.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Services - Graphic Design | Designo Design Agency</title>
+  </head>
+  <Body>
+    <Navigation />
+    <PageContainer>
+      <Main>
+        <PortfolioHero
+          heading="Graphic design"
+          bodyText="We deliver eye-catching branding materials that are tailored to meet your business objectives."
+        />
+        <PortfolioProjects>
+          <PortfolioProject
+            projectTitle="Tim Brown"
+            projectDesc="A book cover designed for Tim Brown’s new release, ‘Change’"
+            projectImagePath="/images/portfolio/graphic-design/image-tim_brown.jpg"
+            projectImageAlt="123"
+          />
+          <PortfolioProject
+            projectTitle="Boxed Water"
+            projectDesc="A simple packaging concept made for Boxed Water"
+            projectImagePath="/images/portfolio/graphic-design/image-boxed_water.jpg"
+            projectImageAlt="123"
+          />
+          <PortfolioProject
+            projectTitle="Science!"
+            projectDesc="A poster made in collaboration with the Federal Art Project"
+            projectImagePath="/images/portfolio/graphic-design/image-science.jpg"
+            projectImageAlt="123"
+          />
+        </PortfolioProjects>
+        <PortfolioLinks includedTypes={["web-design", "app-design"]} />
+      </Main>
+      <Footer />
+    </PageContainer>
+  </Body>
+</html>

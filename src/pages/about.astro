@@ -1,0 +1,219 @@
+---
+import AboutHero from "../components/AboutHero.astro";
+import LocationsLinks from "../components/LocationsLinks.astro";
+
+import Body from "../layout/Body.astro";
+import Footer from "../layout/Footer.astro";
+import Main from "../layout/Main.astro";
+import Navigation from "../layout/Navigation.astro";
+import PageContainer from "../layout/PageContainer.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Learn more about us | Designo Design Agency</title>
+  </head>
+  <body>
+    <Body>
+      <Navigation />
+      <PageContainer>
+        <Main>
+          <AboutHero />
+          <section class="world-class-talent">
+            <div class="world-class-talent__image">
+              <img src="/images/about/image-world-class-talent.jpg" alt="" />
+            </div>
+            <div class="world-class-talent__text">
+              <h2>World-class talent</h2>
+              <p>
+                We are a crew of strategists, problem-solvers, and
+                technologists. Every design is thoughtfully crafted from concept
+                to launch, ensuring success in its given market. We are
+                constantly updating our skills in a myriad of platforms.
+              </p>
+              <p>
+                Our team is multi-disciplinary and we are not merely interested
+                in form — content and meaning are just as important. We give
+                great importance to craftsmanship, service, and prompt delivery.
+                Clients have always been impressed with our high-quality
+                outcomes that encapsulates their brand’s story and mission.
+              </p>
+            </div>
+          </section>
+          <LocationsLinks />
+          <section class="real-deal">
+            <div class="real-deal__image">
+              <img src="/images/about/image-real-deal.jpg" alt="" />
+            </div>
+            <div class="real-deal__text">
+              <h2>The real deal</h2>
+              <p>
+                As strategic partners in our clients’ businesses, we are ready
+                to take on any challenge as our own. Solving real problems
+                require empathy and collaboration, and we strive to bring a
+                fresh perspective to every opportunity. We make design and
+                technology more accessible and give you tools to measure
+                success.
+              </p>
+              <p>
+                We are visual storytellers in appealing and captivating ways. By
+                combining business and marketing strategies, we inspire
+                audiences to take action and drive real results.
+              </p>
+            </div>
+          </section>
+          <Footer />
+        </Main>
+      </PageContainer>
+    </Body>
+  </body>
+</html>
+
+<style>
+  .world-class-talent,
+  .real-deal {
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: 48em) {
+      margin-top: 0;
+
+      margin: 0 4rem;
+
+      border-radius: 1.5rem;
+      overflow: hidden;
+    }
+
+    @media screen and (min-width: 85.375em) {
+      display: grid;
+
+      margin: 0 11vw;
+    }
+
+    @media screen and (min-width: 120em) {
+      margin: 0 20vw;
+    }
+  }
+
+  .world-class-talent {
+    grid-template-columns: 0.7fr 1fr;
+
+    margin-top: -12rem;
+
+    @media screen and (min-width: 48em) {
+      margin-top: 0;
+    }
+  }
+
+  .real-deal {
+    grid-template-columns: 1fr 0.7fr;
+  }
+
+  .world-class-talent__image,
+  .real-deal__image {
+    & img {
+      height: 32rem;
+      object-fit: cover;
+      object-position: center bottom;
+    }
+
+    @media screen and (min-width: 85.375em) {
+      & img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+
+  .real-deal__image {
+    grid-column: 2 / 3;
+  }
+
+  .world-class-talent__text,
+  .real-deal__text {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 2.4rem;
+
+    padding: 8rem 2.4rem;
+
+    text-align: center;
+
+    background-color: var(--color-cream);
+
+    @media screen and (min-width: 48em) {
+      padding: 8rem 6rem;
+    }
+
+    @media screen and (min-width: 85.375em) {
+      align-items: start;
+      justify-content: center;
+
+      padding: 14rem 10rem;
+
+      text-align: start;
+    }
+
+    & > h2 {
+      color: var(--color-peach);
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+
+      top: 0;
+      left: 0;
+
+      height: 100%;
+      width: 100%;
+
+      background-image: url("/images/bg/bg-pattern-portfolio-hero.svg");
+      background-repeat: no-repeat;
+
+      z-index: 0;
+
+      opacity: 0.3;
+    }
+  }
+
+  .real-deal__text {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  @media screen and (min-width: 48em) {
+    .world-class-talent__text::before,
+    .real-deal__text::before {
+      background-image: url("/images/bg/bg-pattern-three-circles.svg");
+      background-position: 12rem -18rem;
+      background-size: 80%;
+      opacity: 1;
+    }
+  }
+</style>
