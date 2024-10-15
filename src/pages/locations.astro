@@ -5,6 +5,7 @@ import Footer from "../layout/Footer.astro";
 
 import Navigation from "../layout/Navigation.astro";
 import LocationsDetails from "../components/LocationsDetails.astro";
+import PageContainer from "../layout/PageContainer.astro";
 ---
 
 <html lang="en">
@@ -36,9 +37,11 @@ import LocationsDetails from "../components/LocationsDetails.astro";
   </head>
   <Body>
     <Navigation />
-    <Main>
-      <LocationsDetails />
-      <Footer />
-    </Main>
+    <PageContainer>
+      <Main>
+        <LocationsDetails />
+        <Footer />
+      </Main>
+    </PageContainer>
   </Body>
 </html>
