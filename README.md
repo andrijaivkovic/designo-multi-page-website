@@ -55,7 +55,7 @@ By building this site I honed in my CSS skills, used Typescript for the first ti
 
 ### Continued development
 
-In the future I'd like to learn more about Astro and Typescript and become more proficient in it.
+In the future I'd like to learn more about Astro and Typescript and become more proficient in them.
 
 ### Useful resources
 
